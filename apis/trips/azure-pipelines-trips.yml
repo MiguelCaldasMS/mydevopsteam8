@@ -22,14 +22,15 @@ steps:
 - task: Go@0
   displayName: 'go get'
   inputs:
-    arguments: '-d'
+    command: get
+#    arguments: '-d'
     workingDirectory: apis/trips
 
 - task: Go@0
   displayName: 'go build'
   inputs:
     command: build
-    arguments: '-o "$(System.TeamProject).exe"'
+#    arguments: '-o "$(System.TeamProject).exe"'
     workingDirectory: apis/trips
 
 - task: Go@0
