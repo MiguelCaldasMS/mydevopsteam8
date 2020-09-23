@@ -17,6 +17,10 @@ variables:
 
 steps:
 - script: |
+    printenv
+    pwd
+
+- script: |
     mkdir -p '$(GOBIN)'
     mkdir -p '$(GOPATH)/pkg'
     mkdir -p '$(modulePath)'
