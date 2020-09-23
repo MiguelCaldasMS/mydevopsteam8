@@ -25,6 +25,20 @@ steps:
     arguments: '-d'
     workingDirectory: apis/trips
 
+- task: Go@0
+  displayName: 'go build'
+  inputs:
+    command: build
+    arguments: '-o "$(System.TeamProject).exe"'
+    workingDirectory: apis/trips
+
+- task: Go@0
+  displayName: 'go test'
+  inputs:
+    command: test
+    workingDirectory: apis/trips
+
+
 #- task: Go@0
 #  displayName: 'go build'
 #  inputs:
