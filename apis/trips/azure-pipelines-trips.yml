@@ -23,6 +23,7 @@ steps:
   displayName: 'go get'
   inputs:
     arguments: '-d'
+    workingDirectory: apis/trips
 
 #- task: Go@0
 #  displayName: 'go build'
@@ -36,9 +37,9 @@ steps:
 #    rootFolderOrFile: '$(Build.Repository.LocalPath)'
 #    includeRootFolder: False
 
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish artifact'
-  condition: succeededOrFailed()
+#- task: PublishBuildArtifacts@1
+#  displayName: 'Publish artifact'
+#  condition: succeededOrFailed()
 
 #variables:
 #  GOROOT: '/opt/hostedtoolcache/go/1.11.13/x64' # Go installation path
