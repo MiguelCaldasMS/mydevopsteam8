@@ -9,11 +9,21 @@ namespace poi.Models
         {
             Message = "POI Service Healthcheck";
             Status = "Healthy";
+            System.String s = Environment.GetEnvironmentVariable("DOCKER_CUSTOM_IMAGE_NAME");
+            DockerVersionNumber = s.Substring(s.IndexOf(':'));
         }
+
         [Newtonsoft.Json.JsonProperty(PropertyName = "message")]
         public string Message {get;set;}
 
         [Newtonsoft.Json.JsonProperty(PropertyName = "status")]
-        public string Status { get; set; }
+        public string Status {
+          get; set;
+        }
+
+        [Newtonsoft.Json.JsonProperty(PropertyName = "dockerversionumber")]
+        public string DockerVersionNumber {
+          get; set;
+        }
     }
 }
